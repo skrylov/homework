@@ -3,10 +3,9 @@ puts "Привет, сейчас мы определим ваш идеальны
 name = gets.chomp
 puts "Хорошо, #{name}. Теперь укажите ваш рост:" 
 height = gets.chomp.to_f
-if height <= 0 
-	puts "Сначал подрасти"
-else 
-	puts "#{name}, ваш идеальный вес равен #{height - 110}кг"
-end
+if height <= 
+
+puts "#{name}, ваш идеальный вес равен #{height - 110}кг"
+
 
 
