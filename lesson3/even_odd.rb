@@ -6,4 +6,3 @@ if input % 2 == 0
 else
 	puts "Ваше число нечетное"
 end
-		
