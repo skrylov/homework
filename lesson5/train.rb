@@ -20,11 +20,11 @@ class Train
 	end
 
 	def add_car
-		@cars_num += 1
+		@cars_num += 1 if @speed == 0
 	end
 
 	def remove_car
-		@cars_num -= 1
+		@cars_num -= 1 if @speed == 0
 	end
 
 	def cars_num
