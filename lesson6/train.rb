@@ -1,10 +1,12 @@
 class Train
-	def initialize (train_num, train_type, cars_num)
+	def initialize (train_num)
 		@train_num = train_num
-		@train_type = train_type
-		@cars_num = cars_num
+		@cars_num = 0
 		@speed = 0
 		@accelerate = 10
+		@cars_list =[]
+		@route_list = []
+		@current_station = nil
 	end	
 		
 	def accelerate
@@ -19,15 +21,36 @@ class Train
 		@speed -= 10 if @speed > 0
 	end
 
-	def add_car
-		@cars_num += 1 if @speed == 0
+	def add_car(car)
+		@cars_list << car && @cars_num += 1 if @speed == 0
 	end
 
 	def remove_car
-		@cars_num -= 1 if @speed == 0
+		@cars_list.pop && @cars_num -= 1 if @speed == 0
 	end
 
-	def cars_num
-		print @cars_num
+	def cars_list
+		puts @cars_list
+		print @cars_list.count
+	end
+
+	#def car_number(car) Хотел так выводить номер вагона. Почему то так не работает :(
+	#	@cars_list[car]
+	#end
+
+	def get_route(route_name)
+		@route_list << route_name
+	end
+
+	def go(station_name)
+		@current_station = station_name
+	end
+
+	def show_current_station
+		print @current_station
+	end
+
+	def show_prev_station
+		@route.find_index(@current_station) - 1
 	end
 end
