@@ -1,10 +1,14 @@
 module TrainBrand
+	attr_accessor :brand
+end
 
-	def train_brand(brand, train_num)
-	@train_brand = brand
+=begin
+
+	def brand(brand)
+	@brand = brand
 	end
 
-	def brand_print(train_num)
+	def brand_print
 		@train_brand
 	end
-end
+=end
