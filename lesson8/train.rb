@@ -19,7 +19,14 @@ class Train
 		@route_list = []
 		@current_station = nil
 		@@train_all[train_num] = self
-	end	
+		validate!
+	end
+
+	 def validate!
+    	raise ArgumentError, "Number can't be blank" if @train_num.nil? || @train_num.empty?
+    	raise ArgumentError, "Number format must be 'aaa-aa', where 'a' is either letter or digit" if @train_num !~ /\A([a-z]|\d){1,3}-?([a-z]|\d){2}\z/i
+    	true
+  end
 
 	def show
 		@@train_all
