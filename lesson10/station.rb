@@ -16,6 +16,10 @@ class Station
 		raise ArgumentError, "Station name must be symbols" if @name.class != String 
 	end
 
+	def block_station
+		@train_list.each { |train| yield(train) }
+	end
+
 	def valid?
 		validate!
 		true
