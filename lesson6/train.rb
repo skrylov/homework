@@ -1,4 +1,8 @@
+require_relative 'TrainBrand'
+
 class Train
+	include TrainBrand
+
 	def initialize (train_num)
 		@train_num = train_num
 		@cars_num = 0
@@ -8,6 +12,8 @@ class Train
 		@route_list = []
 		@current_station = nil
 	end	
+
+
 		
 	def accelerate
 		@speed += @accelerate if @speed <= 110
